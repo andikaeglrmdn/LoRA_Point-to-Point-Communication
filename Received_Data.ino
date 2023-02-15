@@ -19,7 +19,7 @@ void setup() {
   //433E6 for Asia
   //866E6 for Europe
   //915E6 for North America
-  while (!LoRa.begin(866E6)) {
+  while (!LoRa.begin(433E6)) {
     Serial.println(".");
     delay(500);
   }
@@ -27,7 +27,7 @@ void setup() {
   // The sync word assures you don't get LoRa messages from other LoRa transceivers
   // ranges from 0-0xFF
   LoRa.setSyncWord(0xF3);
-  Serial.println("LoRa Initializing OK!");
+  Serial.println("LoRa Get Ready!!!");
 }
 
 void loop() {
@@ -42,9 +42,5 @@ void loop() {
       String LoRaData = LoRa.readString();
       Serial.print(LoRaData); 
     }
-
-    // print RSSI of packet
-    Serial.print("' with RSSI ");
-    Serial.println(LoRa.packetRssi());
   }
 }
