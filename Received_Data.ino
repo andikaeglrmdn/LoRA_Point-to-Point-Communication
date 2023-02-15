@@ -40,7 +40,7 @@ void loop() {
     // read packet
     while (LoRa.available()) {
       String LoRaData = LoRa.readString();
-      Serial.print(LoRaData); 
+      Serial.println(LoRaData); 
     }
   }
 }
